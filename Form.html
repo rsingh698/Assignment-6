@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Member Registration</title>
+    <script src="validation.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Example CSS - you should create a separate 'style.css' file for customization */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .banner {
+            background: url('banner-image.jpg'); /* Replace with your banner image */
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
+        form {
+            max-width: 400px;
+            margin: 20px auto;
+        }
+        label, input, select {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        input[type="submit"] {
+            background-color: #af4c8b;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #9845a0;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <h1>Join Our Community</h1>
+    </div>
+
+    <form id="registrationForm" onsubmit="return validateForm()">
+        
+        <fieldset>
+            <legend>Member Registration</legend>
+            <p>Please complete all the fields below:</p>
+
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required>
+
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required>
+
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" required>
+
+            <label for="postalCode">Postal Code:</label>
+            <input type="text" id="postalCode" name="postalCode" required pattern="[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]">
+
+            <label for="province">Province:</label>
+            <select id="province" name="province" required>
+                <option value="">Select Province</option>
+                <option value="QC">QC</option>
+                <option value="ON">ON</option>
+                <!-- Add other province options here -->
+            </select>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required min="18">
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}">
+
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+
+            <input type="submit" value="Register Now">
+            <input type="reset" value="Clear Form">
+        </fieldset>
+    </form>
+
+    <footer>
+        <p>&copy; Copyright your student info here</p>
+    </footer>
+
+    <script>
+        // Include your JavaScript validation code here or link to an external JS file
+    </script>
+</body>
+</html>
